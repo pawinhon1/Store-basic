@@ -1,0 +1,34 @@
+<h1>Product</h1>
+<p>Content Product...</p>
+
+<!-- แสดงผลจากตัวแปรทั่วไป -->
+<h2>Product</h2>
+<ul>
+    <li>Product Name : {{ productName }}</li>
+    <li>Product Type : {{ productType }}</li>
+    <li>Price : {{ price }}</li>
+</ul>
+
+<!-- Dictionary Variable -->
+<h2>Type Product</h2>
+<ul>
+    <li>ประเภทสินค้า : {{ type.typeName }}</li>
+    <li>ราคา : {{ type.price }}</li>
+</ul>
+
+<!-- แสดงผลจากตัวแปรอาเรย์ -->
+<h2>Cartoon</h2>
+<ul>
+    <li *ngFor="let item of anime; let i = index;">{{ anime[i] }} <button (click)="removeCartoon(item)"> X </button></li>
+</ul>
+
+<button (click)="showData()">Alert Show Data</button>
+<br>
+
+<h2>Add Cartoon</h2>
+<form (submit)="addCartoon(cartoon.value)">
+    <label for="cartoon">เพิ่มการ์ตูน : 
+        <input type="text" placeholder="Add Cartoon" #cartoon >
+    </label>
+
+</form>

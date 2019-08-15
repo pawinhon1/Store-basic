@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Store';
+  title = 'เว็บคลังสินค้า Store';
+  content = "สร้างและจำลองการเพิ่ม ลบ แก้ไข และค้นหาข้อมูลสินค้า";
 }
+
+
