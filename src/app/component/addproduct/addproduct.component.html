@@ -2,12 +2,37 @@
 <p>Content Product...</p>
 
 <!-- แสดงผลจากตัวแปรทั่วไป -->
-<h2>Product</h2>
+<h2>Product แสดงผลจากตัวแปรทั่วไป</h2>
+
 <ul>
-    <li>Product Name : {{ productName }}</li>
-    <li>Product Type : {{ productType }}</li>
-    <li>Price : {{ price }}</li>
+    <li><b>Product Name :</b> {{ productName }}</li>
+    <li><b>Product Type :</b> {{ productType }}</li>
+    <li><b>Price :</b> {{ price }}</li>
 </ul>
+
+<h3>ตัวอย่างของการประกาศตัวแปรด้านบน</h3>
+<p style="color: crimson">
+    private productName:string;<br>
+    private productType:string;<br>
+    private price:string;
+</p>
+<hr style="border : 2px solid crimson">
+
+<!-- Toggle Content -->
+<button (click)="toggleEdit()">แก้ไขข้อมูล</button>
+
+<div *ngIf="isEdit == true">
+    <!-- แก้ไขผ่านฟอร์มด้วย ngModel -->
+    <h2>การแก้ไขข้อมูลด้วย [(ngModel)]</h2>
+    <h3>อย่างการใช้งาน [(ngModel)]</h3>
+    <img src="../../../assets/ngModel.JPG" alt="ngModel" width="40%">
+    <form>
+        <label for="product_name"><b>Product Name :</b>
+            <input type="text" [(ngModel)]="productName" name="product_name">
+        </label>
+    </form><br>
+    <hr style="border : 2px solid crimson">
+</div>
 
 <!-- Dictionary Variable -->
 <h2>Type Product</h2>
@@ -19,7 +44,8 @@
 <!-- แสดงผลจากตัวแปรอาเรย์ -->
 <h2>Cartoon</h2>
 <ul>
-    <li *ngFor="let item of anime; let i = index;">{{ anime[i] }} <button (click)="removeCartoon(item)"> X </button></li>
+    <li *ngFor="let item of anime; let i = index;">{{ anime[i] }} <button (click)="removeCartoon(item)"> X </button>
+    </li>
 </ul>
 
 <button (click)="showData()">Alert Show Data</button>
@@ -27,8 +53,7 @@
 
 <h2>Add Cartoon</h2>
 <form (submit)="addCartoon(cartoon.value)">
-    <label for="cartoon">เพิ่มการ์ตูน : 
-        <input type="text" placeholder="Add Cartoon" #cartoon >
+    <label for="cartoon">เพิ่มการ์ตูน :
+        <input type="text" placeholder="Add Cartoon" #cartoon>
     </label>
-
 </form>

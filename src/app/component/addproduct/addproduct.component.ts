@@ -21,6 +21,8 @@ export class AddproductComponent implements OnInit {
   // ตัวแปรอาเรย์
   private anime:string[];
 
+  private isEdit:boolean;
+
   constructor() { }
 
   ngOnInit() {
@@ -34,6 +36,8 @@ export class AddproductComponent implements OnInit {
     }
 
     this.anime = ["Naruto","Bleach","OnePiece","Dragonball Z"];
+
+    this.isEdit = true;
     console.log("Product is running...");
   }
 
@@ -53,6 +57,10 @@ export class AddproductComponent implements OnInit {
         this.anime.splice(index,1);
       }
     });
+  }
+
+  toggleEdit(){
+    this.isEdit =! this.isEdit;
   }
 
 }
